@@ -1,0 +1,31 @@
+data:
+  train_lmdb_dir: '.../lmdb_foa_synthreal_data_2024_corrected_label_len10s' 
+  test_lmdb_dir: '.../lmdb_foa_synthreal_data_2024_corrected_label_len10s' 
+  ref_files_dir: '.../metadata_dev' # label files
+  norm_file: '.../test_models/foa_wts' # normalization file
+  segment_len: 100 
+  batch_size: 32
+  train_ignore: 'enh' # or None. 'enh' means ignore the enhancement data
+  test_ignore: 'enh'
+
+model:
+  type: 'seddist_nopool'
+  criterion: 'BCE+MSPE'
+  loss_weight: [0.1, 1.0]
+  in_channel: 7
+  in_dim: 64
+  # 'early_manifold'
+  pre-train: False
+  pre-train_model: '...'
+
+train:
+  train_num_workers: 8
+  test_num_workers: 4
+  lr: 0.001
+  nb_steps: 100000
+
+result:
+  log_output_path: '.../A_RC_SED-SDE/train.log'
+  log_interval: 100
+  checkpoint_output_dir: '.../A_RC_SED-SDE/checkpoints'
+  dcase_output_dir: '.../A_RC_SED-SDE/results'
