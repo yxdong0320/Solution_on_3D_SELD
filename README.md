@@ -81,3 +81,4 @@ model:
 python test_A.py -c A_RC_SED-SDE
 ```
 
+Please feel free to contact me at yxdong0320@mail.ustc.edu.cn. if you have any questions about the implementation or encounter any issues while using the code. I'm happy to provide additional information or assistance as needed.
