@@ -1,0 +1,5 @@
+# Ignore SSH keys and other credentials
+*_key
+*_key.pub
+*.pem
+*.key
