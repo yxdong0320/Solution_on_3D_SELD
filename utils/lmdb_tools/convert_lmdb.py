@@ -7,9 +7,6 @@ from tqdm import tqdm
 from datum_pb2 import SimpleDatum
 import sys
 import pdb
-#sys.path.append('/work1/ssd/mchu2/competition/DCASE/visual_src')
-#from visual_tools import VisualTools
-
 
 def npy_to_lmdb(npy_data_dir, npy_label_dir, lmdb_out_dir, segment_length_s
     #, visual_tools
@@ -282,55 +279,9 @@ def debug_read_lmdb2(lmdb_dir):
 if __name__ == "__main__":
     # 2022
     # 2024
-    npy_data_dir = '/disk6/yxdong/Dcase2023/Glass-SELD/feat_label/foa_dev'
-    npy_label_dir = '/disk6/yxdong/Dcase2023/Glass-SELD/feat_label/foa_dev_label'
-    lmdb_out_dir = '/disk6/yxdong/Dcase2023/Glass-SELD/lmdb_glass_synthdata_len10s'
+    npy_data_dir = '.../feat_label/foa_dev'
+    npy_label_dir = '.../foa_dev_label'
+    lmdb_out_dir = '.../lmdb_synthdata_len10s'
     segment_length_s=10
     npy_to_lmdb(npy_data_dir, npy_label_dir, lmdb_out_dir,segment_length_s)
     debug_read_lmdb(lmdb_out_dir)
-
-    '''npy_data_dir2 = '/disk3/yxdong/Dcase2023/Data/feat_label/foa_dev'
-    #npy_label_dir = '/disk3/yxdong/Dcase2023/Data/data_aug/TestSet/feat_label/foa_dev_label'
-    lmdb_out_dir2 = '/disk3/yxdong/Dcase2023/Data/feat_label/lmdb_foa_dev_data_label_test_len10s'
-    #segment_length_s=10
-    npy_to_lmdb2(npy_data_dir2, lmdb_out_dir2,segment_length_s)
-    debug_read_lmdb2(lmdb_out_dir2)'''
-
-
-    #foa_npy_dir = '/yrfs1/intern/qingwang28/DCASE2022/data/data_aug/ACS/feat_label/foa_dev'
-    #mic_npy_dir = '/yrfs1/intern/qingwang28/DCASE2022/data/data_aug/ACS/feat_label/mic_dev'
-    #metadata_dir = '/yrfs1/intern/qingwang28/DCASE2022/data/data_aug/ACS/metadata_dev'
-    #lmdb_out_dir = '/work1/sppro/hxwu2/DCASE/data/data_aug/ACS/lmdb_foa_mic_meta_dev'
-    #npy_foa_mic_meta_to_lmdb(foa_npy_dir, mic_npy_dir, metadata_dir, lmdb_out_dir)
-
-    # 2023
-    # python utils/lmdb_tools/convert_lmdb.py -len 10
-    '''parser = argparse.ArgumentParser('convert lmdb')
-    parser.add_argument('--npy_data_dir', type=str, default='/yrfs2/cv1/jszhang6/qingwang28/Test/test_feat')
-    #parser.add_argument('--npy_label_dir', type=str, default='/yrfs1/intern/yajiang/Data/Dcase2023Task3/data/feat_label/foa_dev_label')
-    parser.add_argument('--lmdb_out_dir', type=str, default='/yrfs2/cv1/jszhang6/qingwang28/Test/lmdb_testdata_len20s')
-    #parser.add_argument('--visual_tool_config_path', type=str, default='/work1/ssd/mchu2/competition/DCASE/visual_src/config.yaml')
-    parser.add_argument('--len', type=int, default=20, help='segment length (s)')
-    args = parser.parse_args()'''
-
-
-    '''npy_data_dir = args.npy_data_dir
-    #npy_label_dir = args.npy_label_dir
-    lmdb_out_dir = args.lmdb_out_dir
-    segment_length = args.len
-    #visual_tool_config_path=args.visual_tool_config_path
-    #visual_tools = VisualTools(visual_tool_config_path)
-    # 192h
-    # npy_data_dir = '/yrfs1/intern/yajiang/Data/Dcase2023Task3/data/data_aug/ACS/feat_label/foa_dev'
-    # npy_label_dir = '/yrfs1/intern/yajiang/Data/Dcase2023Task3/data/data_aug/ACS/feat_label/foa_dev_label'
-    # lmdb_out_dir = '/yrfs1/intern/yajiang/Data/Dcase2023Task3/data/data_aug/ACS/feat_label/lmdb_foa_dev_data_label_len10s'
-    # 24h
-    # npy_data_dir = '/yrfs1/intern/yajiang/Data/Dcase2023Task3/data/combine_synth_real/feat_label/foa_dev'
-    # npy_label_dir = '/yrfs1/intern/yajiang/Data/Dcase2023Task3/data/combine_synth_real/feat_label/foa_dev_adpit_label'
-    # lmdb_out_dir = '/yrfs1/intern/yajiang/Data/Dcase2023Task3/data/combine_synth_real/feat_label/lmdb_foa_dev_data_adpit_label_len20s'
-    # 4h
-    # npy_data_dir = '/yrfs1/intern/yajiang/Data/Dcase2023Task3/data/feat_label/foa_dev'
-    # npy_label_dir = '/yrfs1/intern/yajiang/Data/Dcase2023Task3/data/feat_label/foa_dev_adpit_label'
-    # lmdb_out_dir = '/yrfs1/intern/yajiang/Data/Dcase2023Task3/data/feat_label/lmdb_foa_dev_data_adpit_label_len20s'
-    npy_to_lmdb2(npy_data_dir, lmdb_out_dir, segment_length)
-    debug_read_lmdb2(lmdb_out_dir)'''
